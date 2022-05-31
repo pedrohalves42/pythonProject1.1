@@ -3,13 +3,18 @@ zip - unindo iteraveis
 zip_longest - itertools
 
 '''
-cidades = ['São Paulo','Belo Horizonte', 'Salvador ','Monte belo']
+from itertools import zip_longest, count
 
-estados = ['SP','MG','BA','MG']
+indice = count()
+cidades = ['São Paulo', 'Belo Horizonte', 'Salvador ', 'Monte belo', 'Arcos']
 
-cidades_estados = zip(estados,cidades)
-#print(next(cidades_estados))
+estados = ['SP', 'MG', 'BA', 'MG']
 
-print(list(cidades_estados))
-#for valor in cidades_estados:
+cidades_estados = zip_longest(indice, estados, cidades, fillvalue='Estado')
+
+# print(next(cidades_estados))
+for indice, estado, cidade in cidades_estados:
+    print(indice, estado, cidade)
+
+# for valor in cidades_estados:
 #    print(valor)
